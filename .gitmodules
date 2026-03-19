@@ -1,0 +1,9 @@
+[submodule "model_repositories/DiT"]
+	path = model_repositories/DiT
+	url = https://github.com/facebookresearch/DiT.git
+[submodule "model_repositories/SiT"]
+	path = model_repositories/SiT
+	url = https://github.com/willisma/SiT.git
+[submodule "model_repositories/RandAR"]
+	path = model_repositories/RandAR
+	url = https://github.com/ziqipang/RandAR.git

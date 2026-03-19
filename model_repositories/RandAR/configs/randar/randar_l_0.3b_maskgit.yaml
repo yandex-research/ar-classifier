@@ -1,0 +1,82 @@
+ar_model:
+  target: RandAR.model.randar_gpt.RandARTransformer
+  params:
+    n_layer: 24
+    n_head: 16
+    dim: 1024
+    model_type: c2i
+    vocab_size: 1024
+    block_size: 256 # latent_size ** 2
+    num_classes: 1000
+    cls_token_num: 1
+    resid_dropout_p: 0.1
+    ffn_dropout_p: 0.1
+    drop_path_rate: 0.0
+    token_dropout_p: 0.1
+    position_order: random # or scan
+    grad_checkpointing: True
+    zero_class_qk: True
+    num_inference_steps: 88
+  
+dataset:
+  target: RandAR.dataset.imagenet.INatLatentDataset
+  params:
+    root_dir: /tmp/imagenet-llamagen-adm-256_codes
+
+tokenizer:
+  target: RandAR.model.maskgit_tokenizer.MaskGITTokenizer
+  params:
+    channel_mult: [1, 1, 2, 2, 4]
+    num_resolutions: 5
+    dropout: 0.0
+    hidden_channels: 128
+    num_channels: 3
+    z_channels: 256
+    num_embeddings: 1024
+    embedding_dim: 256
+    commitment_cost: 0.25
+
+accelerator:
+  gradient_accumulation_steps: 1
+  mixed_precision: bf16
+  log_with: wandb
+
+optimizer:
+  lr: 0.0004
+  weight_decay: 0.05 # 5e-2
+  beta1: 0.9
+  beta2: 0.95
+  max_grad_norm: 1.0
+  skip_grad_iter: 100
+  skip_grad_norm: 10
+
+lr_scheduler:
+  type: cosine
+  warm_up_iters: 50000
+  min_lr_ratio: 0.05
+  num_cycles: 0.5
+
+# training related parameters
+exp_name: "randar_0.3b_maskgit_tokens"
+max_iters: 360000
+global_batch_size: 1024
+ema: False 
+ema_decay: 0.9999
+
+num_workers: 8
+log_every: 5
+ckpt_every: 20000
+visualize_every: 2000 # every 10 log intervals, do one visualization
+keep_last_k: -1
+resume_from: null # not used, might remove
+global_seed: 0
+
+results_dir: "results/" # will append exp_name later => results_dir/exp_name
+gpt_ckpt: None # path to resume from
+
+# for eval fid:
+vq_ckpt: "./checkpoints/vq_ds16_c2i.pt"
+
+# for wandb
+wandb_entity: "RandAR"
+wandb_offline: False

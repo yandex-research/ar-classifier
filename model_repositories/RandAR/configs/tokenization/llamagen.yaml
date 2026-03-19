@@ -1,0 +1,13 @@
+model:
+  target: RandAR.model.tokenizer.VQModel
+  params:
+    codebook_size: 16384
+    codebook_embed_dim: 8
+    codebook_l2_norm: True
+    codebook_show_usage: True
+    commit_loss_beta: 0.25
+    entropy_loss_ratio: 0.0
+    encoder_ch_mult: [1, 1, 2, 2, 4]
+    decoder_ch_mult: [1, 1, 2, 2, 4]
+    z_channels: 256
+    dropout_p: 0.0
