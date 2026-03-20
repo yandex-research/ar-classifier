@@ -7,14 +7,13 @@
 <!-- TITLE -->
 
 # **Revisiting Autoregressive Models for Generative Image Classification**
-
-[![arXiv](https://img.shields.io/badge/cs.LG-arXiv:2601.000.svg)](https://arxiv.org/abs/2601.0000)
+<a href='https://arxiv.org/pdf/2603.19122v1'><img src='https://img.shields.io/badge/ArXiv-PDF-red'></a> &nbsp;
 
 </div>
 
   
 
-This is the official implementation of [Revisiting Autoregressive Models for Generative Image Classification](https://github.com/iasudakov).
+This is the official implementation of [Revisiting Autoregressive Models for Generative Image Classification](https://arxiv.org/abs/2603.19122v1).
 
 <!-- DESCRIPTION -->
 
@@ -42,7 +41,7 @@ Class-conditional generative models have emerged as accurate and robust classifi
 
 To reproduce the paper results, we provide our RandAR and DiT checkpoints that were pretrained with random crop augmentation for improved classification performance: 
 
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-blue?style=flat&logo=HuggingFace&logoColor=blue)](https://huggingface.co/iasudakov/AR_classifiers)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-blue?style=flat&logo=HuggingFace&logoColor=blue)](https://huggingface.co/iasudakov/ar_classifier)
 
 ## Order-marginalized AR classifier
 
@@ -84,12 +83,13 @@ torchrun  --nproc_per_node=N scripts/SiT_classifier.py  --batch_size=125  --step
 
 
 ```bibtex
-@misc{X,
-title={X},
-author={X},
-year={X},
-eprint={X},
-archivePrefix={arXiv},
-primaryClass={cs.LG}
+@article{sudakov2026revisiting,
+      title={Revisiting Autoregressive Models for Generative Image Classification}, 
+      author={Ilia Sudakov and Artem Babenko and Dmitry Baranchuk},
+      year={2026},
+      eprint={2603.19122},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.19122}, 
 }
 ```
