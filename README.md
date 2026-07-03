@@ -6,14 +6,18 @@
 
 <!-- TITLE -->
 
-# **Revisiting Autoregressive Models for Generative Image Classification**
-<a href='https://arxiv.org/pdf/2603.19122v1'><img src='https://img.shields.io/badge/ArXiv-PDF-red'></a> &nbsp;
+# [ECCV 2026] Revisiting Autoregressive Models for Generative Image Classification
+<a href='https://arxiv.org/pdf/2603.19122'><img src='https://img.shields.io/badge/ArXiv-PDF-red'></a> &nbsp;
 
 </div>
 
   
 
-This is the official implementation of [Revisiting Autoregressive Models for Generative Image Classification](https://arxiv.org/abs/2603.19122v1).
+This is the official implementation of [Revisiting Autoregressive Models for Generative Image Classification](https://arxiv.org/pdf/2603.19122).
+
+## News & Updates
+  - [x] **[2026/06/18]** ✈️ Our paper is accepted to ECCV 2026!
+  - [x] **[2026/03/19]** 📝 Our code and paper is now available! The paper is released [here](https://arxiv.org/pdf/2603.19122).
 
 <!-- DESCRIPTION -->
 
